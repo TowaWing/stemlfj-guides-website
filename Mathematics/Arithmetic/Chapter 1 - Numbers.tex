@@ -1,8 +1,12 @@
 \documentclass{article}
-
+\usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{multicol}
 \usepackage{mathtools}
-\usepackage{geometry}
+\usepackage[most]{tcolorbox}
+\usepackage{marginnote}
 
 \geometry{top=1cm}
 
@@ -10,6 +14,38 @@
 \DeclarePairedDelimiter{\paren}{\lparen}{\rparen}
 
 \renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+
+\reversemarginpar
+
+\newtcolorbox{triviabox}{
+  colback=yellow!10,
+  colframe=orange!60!black,
+  boxrule=0.6pt,
+  arc=2pt,
+  left=4pt,
+  right=4pt,
+  top=4pt,
+  bottom=4pt,
+  width=\marginparwidth
+}
+
+\newcommand{\trivia}[1]{%
+  \marginnote{\begin{triviabox}\footnotesize #1\end{triviabox}}%
+}
+
+\newtcolorbox{definitionbox}[1][]{
+  colback=blue!5,
+  colframe=blue!50!black,
+  title=Definition,
+  fonttitle=\bfseries,
+  boxrule=0.8pt,
+  arc=2pt,
+  left=6pt,
+  right=6pt,
+  top=6pt,
+  bottom=6pt,
+  #1
+}
 
 \begin{document}
     \section*{Chapter 1}
@@ -27,7 +63,17 @@
     \newline
     In this chapter, we will explore where numbers came from, what people used to do with them, how people counted before we had supercomputers in our pockets, and most importantly, what we can now do with them.
 
-    \subsubsection{Numbers - The Building Blocks of Mathematics}
+    \subsubsection{Numbers: The Building Blocks of Mathematics}
+    \par
+    Numbers are so familiar to us now, but it's hard to imagine that numbers were only invented about 5-6 thousand years ago.\cite{marshack1971}.
+    
 
+
+\begin{thebibliography}{9}
+    \bibitem{marshack1971}
+    Alexander Marshack.
+    \textit{The Roots of Civilization: The Cognitive Beginnings of Man's First Art, Symbol, and Notation}.
+    McGraw-Hill, 1971.
+\end{thebibliography}
 
 \end{document}
